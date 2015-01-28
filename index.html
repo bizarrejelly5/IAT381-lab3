@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<script src = "react.js"></script>
+	<script src = "JSXTransformer.js"></script>
+	<head>
+		<title>IAT 381 Lab 4</title>
+	</head>
+	<body>
+		<div id = "container">
+			
+		</div>
+	
+    <script>
+        var showMessage = React.createClass({
+			render: function() {
+				message = "Hello";
+				return React.DOM.p(null, message);
+			}
+		});
+
+      // Call React.createFactory instead of directly call ExampleApplication({...}) in React.render
+      var test = React.createFactory(showMessage);
+
+      setInterval(function() {
+        React.render(
+			test(),
+			document.getElementById('container')
+        );
+      });
+    </script>
+	</body>
+</html>
